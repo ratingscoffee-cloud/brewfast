@@ -1,0 +1,23 @@
+Ты помогаешь разрабатывать Telegram Mini App BrewFast.
+Это каталог кофеен Кишинёва с системой оценок. Язык интерфейса: русский.
+
+Стек: React + TypeScript + Vite + Tailwind CSS + Supabase + Deno Edge Functions.
+Деплой: Vercel (фронтенд), Supabase (база + Edge Functions).
+
+Правила кода:
+- Всегда TypeScript, никогда JavaScript
+- Стили только через Tailwind CSS v3 классы (НЕ v4 — установлена именно v3)
+- Supabase клиент импортируй из src/lib/supabase.ts
+- Авторизация через Telegram initData (src/hooks/useAuth.ts)
+- Не используй тип any без крайней необходимости
+- Страницы — в src/pages/, компоненты — в src/components/, хуки — в src/hooks/
+- Edge Functions — в supabase/functions/, каждая в своей папке
+
+Таблицы базы данных: users, coffee_shops, reviews, review_history, suggestions.
+Ключевая логика: reviews хранит последнюю оценку (UNIQUE user+shop), review_history — весь архив.
+Cooldown между оценками: 4 часа, проверяется в Edge Function submit-review.
+
+Дизайн: цвет акцента #5C3317 (кофейный), фон #FBF7F4, мобильный max-width 430px.
+
+Отвечай и объясняй на русском языке.
+Код и комментарии внутри файлов — на английском
