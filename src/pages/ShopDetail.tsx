@@ -65,9 +65,10 @@ export default function ShopDetail() {
             ))}
           </div>
         </section>
+        <div className="h-32" />
       </div>
 
-      <div className="fixed bottom-0 left-0 right-0 bg-[#FBF7F4]/95 p-4 backdrop-blur">
+      <div className="fixed bottom-14 left-0 right-0 bg-[#FBF7F4]/95 p-4 backdrop-blur">
         <div className="mx-auto w-full max-w-[430px]">
           <button
             type="button"
