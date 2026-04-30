@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import BottomNav from './components/BottomNav'
 import AddReview from './pages/AddReview'
@@ -12,6 +13,14 @@ function App() {
   const location = useLocation()
   const hideBottomNav = location.pathname === '/privacy'
 
+  useEffect(() => {
+    const tg = window.Telegram?.WebApp
+    if (tg) {
+      tg.ready()
+      tg.expand()
+    }
+  }, [])
+  
   return (
     <>
       <Routes>
